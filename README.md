@@ -23,3 +23,8 @@
 5. Вылизать дизайн
 6. При нехватки времени на фикс багов - тщательно замаскировать
 7. Сделать пасхалку - при пятикратном нажатии на лого в main_activity вывести какой-нибудь текст куда-нибудь
+
+
+> Мануалы для вкуривания:
+> https://www.dsphotoeditor.com/android
+> https://developer.android.com/topic/libraries/view-binding#kts
