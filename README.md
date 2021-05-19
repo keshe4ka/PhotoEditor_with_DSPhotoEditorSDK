@@ -26,5 +26,6 @@
 
 
 > Мануалы для вкуривания:
-> https://www.dsphotoeditor.com/android
-> https://developer.android.com/topic/libraries/view-binding#kts
+> > https://www.dsphotoeditor.com/android
+> 
+> > https://developer.android.com/topic/libraries/view-binding#kts
