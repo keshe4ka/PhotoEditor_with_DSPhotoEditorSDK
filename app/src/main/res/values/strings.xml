@@ -3,4 +3,6 @@
     <string name="logo">Photo Editor</string>
     <string name="cameraIcon">Camera</string>
     <string name="galleryIcon">Gallery</string>
+    <string name="savedPhoto">Image saved in gallery</string>
+    <string name="share">You can post it on your social networks</string>
 </resources>
