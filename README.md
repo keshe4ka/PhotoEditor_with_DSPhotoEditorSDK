@@ -27,8 +27,9 @@ ________________________________________________________________________________
 ## Гайд по разборке и сборке .aar:
 
 ```bash
-//bash code
+// разобрали
 $ unzip ds-photo-editor-sdk-v10.aar -d tempFolder
+// собрали
 $ cd tempFolder
 $ zip -r ../ds-photo-editor-sdk-v10.aar *
 ```
