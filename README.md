@@ -28,10 +28,10 @@ ________________________________________________________________________________
 
 ```bash
 // разобрали
-$ unzip ds-photo-editor-sdk-v10.aar -d tempFolder
+unzip ds-photo-editor-sdk-v10.aar -d tempFolder
 // собрали
-$ cd tempFolder
-$ zip -r ../ds-photo-editor-sdk-v10.aar *
+cd tempFolder
+zip -r ../ds-photo-editor-sdk-v10.aar *
 ```
 
 > Мануалы для вкуривания:
