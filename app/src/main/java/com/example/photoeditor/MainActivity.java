@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //getSupportActionBar().hide();
-
         binding.galleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
