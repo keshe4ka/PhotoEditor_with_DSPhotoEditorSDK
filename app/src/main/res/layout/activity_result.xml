@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButton"
         app:layout_constraintVertical_bias="0.341"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView"
@@ -52,36 +52,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/facebookButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/instagramButton"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:srcCompat="@drawable/ic_facebook" />
-
-    <ImageView
-        android:id="@+id/shareButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="60dp"
-        android:padding="2dp"
-        android:tint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/instagramButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:srcCompat="@drawable/outline_share_24" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
         android:text="@string/share"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -93,10 +69,9 @@
         android:id="@+id/instagramButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toStartOf="@+id/facebookButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/shareButton"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image"
         app:srcCompat="@drawable/ic_instagram" />
 

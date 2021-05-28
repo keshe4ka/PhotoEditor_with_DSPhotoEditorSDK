@@ -24,9 +24,10 @@ import java.io.ByteArrayOutputStream;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    int IMAGE_REQUEST_CODE = 45;
-    int CAMERA_REQUEST_CODE = 14;
-    int RESULT_CODE = 200;
+    int IMAGE_REQUEST_CODE = 1;
+    int CAMERA_REQUEST_CODE = 2;
+    int RESULT_CODE = 3;
+    int CLOSE_CODE = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +94,17 @@ public class MainActivity extends AppCompatActivity {
             dsPhotoEditorIntent.putExtra(DsPhotoEditorConstants.DS_PHOTO_EDITOR_TOOLS_TO_HIDE, toolsToHide);
             startActivityForResult(dsPhotoEditorIntent, RESULT_CODE);
         }
+
+        if (requestCode == CLOSE_CODE){
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            intent.setData(data.getData());
+            startActivity(intent);
+        }
     }
 
     public Uri getImageUri(Bitmap bitmap){
         ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100, arrayOutputStream);
-        //String path = ContentValues.
         String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", "Description");
         return Uri.parse(path);
     }
