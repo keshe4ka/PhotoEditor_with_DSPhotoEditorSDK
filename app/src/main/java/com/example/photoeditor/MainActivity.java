@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,7 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.dsphotoeditor.sdk.activity.DsPhotoEditorActivity;
 import com.dsphotoeditor.sdk.utils.DsPhotoEditorConstants;
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     int CAMERA_REQUEST_CODE = 2;
     int RESULT_CODE = 3;
     int CLOSE_CODE = 4;
+    int coutOnClick = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,26 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
+                }
+            }
+        });
+
+        binding.logoImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = findViewById(R.id.easterEgg);
+                coutOnClick++;
+                if(coutOnClick == 4) {
+                    textView.setText("Ты нашёл то, что искал");
+                }
+                else if (coutOnClick == 9){
+                    textView.setText("Пасхалок больше не будет");
+                }
+                else if (coutOnClick == 19){
+                    textView.setText("На 10000 будет мультик");
+                }
+                else if (coutOnClick > 19){
+                    textView.setText(" ");
                 }
             }
         });
