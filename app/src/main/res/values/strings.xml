@@ -4,5 +4,5 @@
     <string name="cameraIcon">Camera</string>
     <string name="galleryIcon">Gallery</string>
     <string name="savedPhoto">Image saved in gallery</string>
-    <string name="share">You can post it on Instagram</string>
+    <string name="share">You can share this image</string>
 </resources>

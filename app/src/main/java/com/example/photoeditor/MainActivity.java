@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     int IMAGE_REQUEST_CODE = 1;
     int CAMERA_REQUEST_CODE = 2;
-    int RESULT_CODE = 3;
+    int RESULT_CODE = 200;
     int CLOSE_CODE = 4;
-    int coutOnClick = 0;
+    int EASTER_EGG_COUNTER = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,17 +63,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView textView = findViewById(R.id.easterEgg);
-                coutOnClick++;
-                if(coutOnClick == 4) {
+                EASTER_EGG_COUNTER++;
+                if(EASTER_EGG_COUNTER == 4) {
                     textView.setText("Ты нашёл то, что искал");
                 }
-                else if (coutOnClick == 9){
+                else if (EASTER_EGG_COUNTER == 9){
                     textView.setText("Пасхалок больше не будет");
                 }
-                else if (coutOnClick == 19){
+                else if (EASTER_EGG_COUNTER == 19){
                     textView.setText("На 10000 будет мультик");
                 }
-                else if (coutOnClick > 19){
+                else if (EASTER_EGG_COUNTER > 19){
                     textView.setText(" ");
                 }
             }
