@@ -37,18 +37,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButton"
-        app:layout_constraintVertical_bias="0.341"
+        app:layout_constraintVertical_bias="0.377"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textAboutSaved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="100dp"
         android:text="@string/savedPhoto"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,24 +56,28 @@
         android:id="@+id/textFilePath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/share"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image"
         tools:text="@string/share" />
 
-    <ImageView
-        android:id="@+id/instagramButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="72dp"
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="159dp"
+        android:background="#FFFFFF"
+        android:text="@string/share_action"
+        app:icon="@drawable/outline_share_24"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:srcCompat="@drawable/ic_instagram"
-        tools:srcCompat="@drawable/ic_instagram" />
+        app:layout_constraintTop_toBottomOf="@+id/textFilePath" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

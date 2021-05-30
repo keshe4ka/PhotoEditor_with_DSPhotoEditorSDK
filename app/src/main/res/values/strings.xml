@@ -5,4 +5,5 @@
     <string name="galleryIcon">Gallery</string>
     <string name="savedPhoto">Image saved in gallery</string>
     <string name="share">You can share this image</string>
+    <string name="share_action">SHARE</string>
 </resources>

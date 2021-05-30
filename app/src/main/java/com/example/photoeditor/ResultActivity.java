@@ -65,7 +65,7 @@ public class ResultActivity extends AppCompatActivity {
         });
 
 
-        binding.instagramButton.setOnClickListener(new View.OnClickListener() {
+        binding.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Drawable drawable=imageView.getDrawable();
