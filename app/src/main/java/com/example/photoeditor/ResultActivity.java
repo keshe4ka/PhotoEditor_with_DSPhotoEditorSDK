@@ -3,18 +3,12 @@ package com.example.photoeditor;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.content.Context;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,10 +18,7 @@ import com.dsphotoeditor.sdk.utils.DsPhotoEditorConstants;
 import com.example.photoeditor.databinding.ActivityResultBinding;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -47,8 +38,8 @@ public class ResultActivity extends AppCompatActivity {
         imageView=findViewById(R.id.image);
         imageView.setImageURI(outputUri);
 
-        String pathname = outputUri.getPath() + ".jpg";
-        TextView textView = findViewById(R.id.textView2);
+        String pathname = outputUri.toString() + ".jpg";
+        TextView textView = findViewById(R.id.textFilePath);
         textView.setText(pathname);
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
@@ -79,12 +70,10 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Drawable drawable=imageView.getDrawable();
                 Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
-                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getActivity().getContentResolver(), outputUri);
 
                 try {
-
-                    //File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + getFileName(ouputUri));
-                    File file = new File(pathname);
+                    String filename = pathname.substring(pathname.lastIndexOf("/")+1);
+                    File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + filename);
                     FileOutputStream fOut = new FileOutputStream(file);
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
                     fOut.flush();
@@ -94,7 +83,6 @@ public class ResultActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Uri photoURI = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID +".provider", file);
 
-                    Uri filepath = intent.getData();
 
                     intent.putExtra(Intent.EXTRA_STREAM, photoURI);
                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
