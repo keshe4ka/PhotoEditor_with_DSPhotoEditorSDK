@@ -62,19 +62,18 @@ public class MainActivity extends AppCompatActivity {
         binding.logoImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textView = findViewById(R.id.easterEgg);
                 EASTER_EGG_COUNTER++;
                 if(EASTER_EGG_COUNTER == 4) {
-                    textView.setText("Ты нашёл то, что искал");
+                    binding.easterEgg.setText("Ты нашёл то, что искал");
                 }
                 else if (EASTER_EGG_COUNTER == 9){
-                    textView.setText("Пасхалок больше не будет");
+                    binding.easterEgg.setText("Пасхалок больше не будет");
                 }
                 else if (EASTER_EGG_COUNTER == 19){
-                    textView.setText("На 10000 будет мультик");
+                    binding.easterEgg.setText("На 10000 будет мультик");
                 }
                 else if (EASTER_EGG_COUNTER > 19){
-                    textView.setText(" ");
+                    binding.easterEgg.setText(" ");
                 }
             }
         });
