@@ -25,5 +25,3 @@ zip -r ../ds-photo-editor-sdk-v10.aar *
 
 > Мануалы для вкуривания:
 > > https://www.dsphotoeditor.com/android
-> 
-> > https://developer.android.com/topic/libraries/view-binding#kts
