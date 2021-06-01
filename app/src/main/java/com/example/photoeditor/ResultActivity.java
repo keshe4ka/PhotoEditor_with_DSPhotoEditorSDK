@@ -23,7 +23,6 @@ import java.io.FileOutputStream;
 public class ResultActivity extends AppCompatActivity {
 
     ActivityResultBinding binding;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +34,8 @@ public class ResultActivity extends AppCompatActivity {
 
         binding.image.setImageURI(outputUri);
 
-        imageView=findViewById(R.id.image);
-        imageView.setImageURI(outputUri);
-
         String pathname = outputUri.toString() + ".jpg";
-        TextView textView = findViewById(R.id.textFilePath);
-        textView.setText(pathname);
+        binding.textFilePath.setText(pathname);
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,11 +59,10 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-
         binding.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Drawable drawable=imageView.getDrawable();
+                Drawable drawable=binding.image.getDrawable();
                 Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
 
                 try {
@@ -83,7 +77,6 @@ public class ResultActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Uri photoURI = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID +".provider", file);
 
-
                     intent.putExtra(Intent.EXTRA_STREAM, photoURI);
                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     intent.setType("image/jpg");
@@ -94,12 +87,5 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
-
-
-
 }
